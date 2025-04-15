@@ -179,7 +179,7 @@ body {
 .about {
     padding: 4rem 1rem;
     text-align: center;
-    background: url('assets/images/pexels-pixabay-267350 (2).jpg') center/cover fixed;
+    background: url('assets/images/pexels-pixabay-267350.jpg') center/cover fixed;
     position: relative;
 }
 
@@ -331,17 +331,25 @@ hr.small {
     text-align: center;
 }
 
-.testimonials-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.testimonials-swiper {
+    padding: 1rem 0;
+}
+
+.testimonials-swiper .swiper-slide {
+    width: 280px;
 }
 
 .testimonial-card {
-    background-color: var(--modules_color_second);
-    padding: 1.5rem;
+    background-color: var(--modules_color);
     border-radius: 10px;
+    overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 1.5rem;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
 }
 
 .testimonial-card blockquote {
@@ -371,6 +379,15 @@ hr.small {
 .rating-area {
     color: #f39c12;
     font-size: 1rem;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+    background: #666;
+    opacity: 0.5;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+    background: var(--mobile_accent);
 }
 
 /* Clients Section */
@@ -544,24 +561,12 @@ footer {
     font-weight: bold;
 }
 
-.footer-nav {
-    margin-top: 1rem;
-}
-
-.footer-nav .nav-links {
-    flex-wrap: wrap;
-}
-
-.footer-logo {
-    max-width: 60px;
-}
-
 /* Go to Top Button */
 .gotoTop {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background-color: var(--mobile_accent);
+    background-color: var(--global_main_color);
     color: #fff;
     padding: 1rem;
     border-radius: 50%;
@@ -678,6 +683,10 @@ footer {
         padding: 3rem 1rem;
     }
 
+    .testimonials-swiper .swiper-slide {
+        width: 90%;
+    }
+
     .clients {
         padding: 3rem 1rem;
     }
@@ -739,14 +748,8 @@ footer {
         max-width: 400px;
     }
 
-    .testimonials-grid {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .testimonial-card {
-        flex: 0 0 300px;
+    .testimonials-swiper .swiper-slide {
+        width: 300px;
     }
 
     .contact-container {
