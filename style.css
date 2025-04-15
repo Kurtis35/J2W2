@@ -519,7 +519,7 @@ hr.small {
 .contact-form .btn {
     width: 100%;
     padding: 1rem;
-    background-color: var(--mobile_accent);
+    background-color: var(--global_main_color);
     color: #fff;
     border: none;
     border-radius: 50px;
