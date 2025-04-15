@@ -142,7 +142,7 @@ body {
 }
 
 .hero-content h1 span {
-    color: var(--mobile_accent);
+    color: var(--global_main_color);
 }
 
 .hero-content p {
@@ -154,7 +154,7 @@ body {
 .hero-btn {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: var(--mobile_accent);
+    background-color: var(--global_main_color);
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
