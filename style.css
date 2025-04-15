@@ -373,8 +373,8 @@ hr.small {
     font-size: 1rem;
 }
 
-/* Customers Section */
-.customers {
+/* Clients Section */
+.clients {
     padding: 4rem 1rem;
     background-color: var(--modules_color_second);
     text-align: center;
