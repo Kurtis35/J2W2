@@ -4,7 +4,7 @@ AOS.init({
     offset: 50
 });
 
-const customerSwiper = new Swiper('.customers .swiper-container', {
+const clientSwiper = new Swiper('.clients .swiper-container', {
     slidesPerView: 1,
     spaceBetween: 10,
     autoplay: {
@@ -31,6 +31,32 @@ const customerSwiper = new Swiper('.customers .swiper-container', {
 });
 
 const servicesSwiper = new Swiper('.services-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    autoplay: {
+        delay: 3000,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        480: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        }
+    }
+});
+
+const testimonialsSwiper = new Swiper('.testimonials-swiper', {
     slidesPerView: 1,
     spaceBetween: 10,
     autoplay: {
