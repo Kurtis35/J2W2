@@ -82,6 +82,32 @@ const testimonialsSwiper = new Swiper('.testimonials-swiper', {
     }
 });
 
+const portfolioSwiper = new Swiper('.portfolio-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    autoplay: {
+        delay: 3000,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        480: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        }
+    }
+});
+
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 
@@ -101,6 +127,13 @@ document.querySelectorAll('.dropdown-toggle').forEach(dropdown => {
             parent.classList.toggle('active');
             dropdown.setAttribute('aria-expanded', parent.classList.contains('active'));
         }
+    });
+});
+
+document.querySelectorAll('.faq-item h3').forEach(faq => {
+    faq.addEventListener('click', () => {
+        const parent = faq.parentElement;
+        parent.classList.toggle('active');
     });
 });
 
@@ -135,13 +168,18 @@ window.addEventListener('scroll', debounce(() => {
 document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
+        const href = this.getAttribute('href');
+        if (href.includes('#')) {
+            const targetId = href.substring(href.indexOf('#') + 1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        } else {
+            window.location.href = href;
         }
         if (window.innerWidth <= 767 && navLinks) {
             navLinks.classList.remove('active');
