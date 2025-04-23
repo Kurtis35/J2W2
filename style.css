@@ -323,186 +323,211 @@ hr.small {
 .services-swiper .swiper-pagination-bullet-active {
     background: var(--mobile_accent);
 }
-/* Service Hero Section (Service Pages) */
+/* Service Hero Section (social-media-digital-marketing.html) */
 .service-hero {
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, var(--global_main_color) 0%, var(--mobile_accent) 100%), url('https://images.unsplash.com/photo-1611162617474-5b21e879e113') center/cover no-repeat;
+    background-blend-mode: overlay;
     text-align: center;
-    position: relative;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.service-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('assets/images/service-hero-bg.jpg') no-repeat center;
-    background-size: cover;
-    opacity: 0.2;
-    z-index: 0;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
 }
 
 .service-hero-content {
-    position: relative;
-    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.service-hero h1 {
-    font-size: 48px;
+.service-hero-content h1 {
+    font-size: 2.5rem;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
-.service-hero p {
-    font-size: 20px;
-    color: #ccc;
+.service-hero-content p {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
 }
 
-/* Service Description Section (Service Pages) */
+.back-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #fff;
+    color: var(--global_main_color);
+}
+
+/* Service Description Section */
 .service-description {
-    padding: 100px 20px;
-    background-color: #1a1a1a;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 4rem 1rem;
+    background-color: var(--modules_color_second);
 }
 
 .service-description-content {
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    align-items: center;
-}
-
-.service-text {
-    flex: 1;
-    color: #fff;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .service-text h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #fff;
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+hr.small {
+    width: 60px;
+    border-top: 3px solid var(--global_main_color);
+    margin: 1rem 0;
 }
 
 .service-text p {
-    font-size: 16px;
-    color: #ccc;
-    line-height: 1.6;
-    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
 }
 
 .request-quote {
     display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--service_accent_color);
+    padding: 1rem 2rem;
+    background-color: var(--global_main_color);
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
 .request-quote:hover {
-    background-color: #00a69a;
-}
-
-.service-image {
-    flex: 1;
+    transform: scale(1.05);
 }
 
 .service-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* Portfolio Section (Service Pages) */
-.service-portfolio {
-    padding: 100px 20px;
-    background-color: #222;
     width: 100%;
-    box-sizing: border-box;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.portfolio-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.portfolio-item {
-    width: 300px;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 8px;
+/* Portfolio Section */
+.service-portfolio {
+    padding: 4rem 1rem;
+    background-color: var(--modules_color);
     text-align: center;
 }
 
+.section-header h2 {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.portfolio-swiper {
+    padding: 1rem 0;
+}
+
+.portfolio-swiper .swiper-slide {
+    width: 280px;
+}
+
+.portfolio-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
 .portfolio-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .portfolio-item h3 {
-    font-size: 18px;
-    color: #fff;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    padding: 1rem;
+    color: #000;
 }
 
 .portfolio-item p {
-    font-size: 14px;
-    color: #ccc;
+    font-size: 1rem;
+    padding: 0 1rem 1rem;
+    color: #333;
 }
 
-/* Specialized Services Section (Service Pages) */
+.portfolio-swiper .swiper-pagination-bullet {
+    background: #666;
+    opacity: 0.5;
+}
+
+.portfolio-swiper .swiper-pagination-bullet-active {
+    background: var(--mobile_accent);
+}
+
+/* Specialized Services Section */
 .specialized-services {
-    padding: 100px 20px;
-    background-color: #1a1a1a;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 4rem 1rem;
+    background-color: var(--modules_color_second);
+    text-align: center;
 }
 
 .specialized-services-content {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .specialized-service {
-    width: 300px;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.specialized-service:hover {
+    transform: scale(1.05);
+}
+
+.specialized-service i {
+    font-size: 2rem;
+    color: var(--global_main_color);
+    margin-bottom: 1rem;
 }
 
 .specialized-service h3 {
-    font-size: 18px;
-    color: #fff;
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #000;
+    margin-bottom: 0.5rem;
 }
 
 .specialized-service p {
-    font-size: 14px;
-    color: #ccc;
+    font-size: 1rem;
+    color: #333;
 }
 
-/* FAQ Section (Service Pages) */
+/* FAQ Section */
 .faq {
-    padding: 100px 20px;
-    background-color: #222;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 4rem 1rem;
+    background-color: var(--modules_color);
 }
 
 .faq-content {
@@ -511,21 +536,37 @@ hr.small {
 }
 
 .faq-item {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
 }
 
 .faq-item h3 {
-    font-size: 18px;
-    color: #fff;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #000;
+    padding: 1rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-item h3 i {
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active h3 i {
+    transform: rotate(180deg);
 }
 
 .faq-item p {
-    font-size: 14px;
-    color: #ccc;
+    font-size: 1rem;
+    color: #333;
+    padding: 0 1rem 1rem;
+    display: none;
+}
+
+.faq-item.active p {
+    display: block;
 }
 
 /* Testimonials Section */
