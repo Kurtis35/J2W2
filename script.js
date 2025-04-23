@@ -4,6 +4,32 @@ AOS.init({
     offset: 50
 });
 
+const clientSwiper = new Swiper('.clients .swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    autoplay: {
+        delay: 2500,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+        }
+    }
+});
+
 const servicesSwiper = new Swiper('.services-swiper', {
     slidesPerView: 1,
     spaceBetween: 10,
@@ -56,58 +82,6 @@ const testimonialsSwiper = new Swiper('.testimonials-swiper', {
     }
 });
 
-const clientsSwiper = new Swiper('.clients .swiper-container', {
-    slidesPerView: 2,
-    spaceBetween: 10,
-    autoplay: {
-        delay: 3000,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    breakpoints: {
-        480: {
-            slidesPerView: 3,
-            spaceBetween: 15,
-        },
-        768: {
-            slidesPerView: 4,
-            spaceBetween: 20,
-        },
-        1024: {
-            slidesPerView: 5,
-            spaceBetween: 20,
-        }
-    }
-});
-
-const portfolioSwiper = new Swiper('.portfolio-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    autoplay: {
-        delay: 3000,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    breakpoints: {
-        480: {
-            slidesPerView: 1,
-            spaceBetween: 15,
-        },
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-        },
-        1024: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-        }
-    }
-});
-
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 
@@ -130,11 +104,17 @@ document.querySelectorAll('.dropdown-toggle').forEach(dropdown => {
     });
 });
 
-document.querySelectorAll('.faq-item h3').forEach(faq => {
-    faq.addEventListener('click', () => {
-        const parent = faq.parentElement;
-        parent.classList.toggle('active');
-    });
+document.querySelector('.contact-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const submitBtn = this.querySelector('.btn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    setTimeout(() => {
+        alert('Thank you for contacting us!');
+        this.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Contact Us';
+    }, 1000);
 });
 
 function debounce(func, wait) {
