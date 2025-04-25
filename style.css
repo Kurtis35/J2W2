@@ -479,13 +479,14 @@ body {
 }
 
 .service-hero-content h1 span {
-    color: var(--global_main_color);
+    color: var(--light_blue);
 }
 
 .service-hero-content p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     color: #fff;
     margin-bottom: 2rem;
+}
 
 .btn {
     display: inline-block;
