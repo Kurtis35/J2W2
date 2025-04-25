@@ -333,6 +333,7 @@ hr.small {
 
 :root {
     --global_main_color: #1872ed;
+    --light_blue: #4da8ff;
     --global_main_color_btn_text_color: #ffffff;
     --modules_color: #f8fafc;
     --modules_color_second: #ffffff;
@@ -527,6 +528,10 @@ body {
     font-size: clamp(0.9rem, 1.5vw, 1.1rem);
     color: #444;
     margin-bottom: 1.5rem;
+}
+
+.service-image {
+    width: 100%;
 }
 
 .service-image img {
@@ -761,8 +766,10 @@ footer {
     }
 
     .service-hero {
-        padding: 4rem 1rem;
-        min-height: 60vh;
+        padding: 3rem 1rem;
+        min-height: 50vh;
+        background-size: contain;
+        background-position: center;
     }
 
     .service-hero-content h1 {
@@ -770,7 +777,12 @@ footer {
     }
 
     .service-description {
-        padding: 3rem 1rem;
+        padding: 2rem 1rem;
+    }
+
+    .service-image img {
+        max-height: 200px;
+        object-fit: cover;
     }
 
     .service-portfolio {
